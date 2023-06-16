@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Kanit&display=swap");
+
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +10,6 @@
 .wrapper {
   width: 100%;
   overflow-x: hidden;
-  height: auto;
 }
 
 .newsFeed {
@@ -31,6 +32,7 @@
 
 .intro_area {
   position: relative;
+  font-family: "Kanit", sans-serif;
 }
 .intro_area .box {
   position: absolute;
@@ -44,9 +46,15 @@
 }
 
 .intro_area div {
-  font-size: 30px;
   margin-left: 40px;
   color: beige;
+}
+.intro_area p {
+  font-size: 20px;
+}
+.intro_area h1 {
+  font-size: 35px;
+  font-family: "Zeyada", cursive;
 }
 
 @keyframes move {
@@ -111,7 +119,6 @@
 }
 
 .newsFeed section:nth-child(2) div:hover p {
-  text-align: right;
   transform: translateY(-101%);
 }
 .newsFeed section:nth-child(2) div:hover img {
@@ -203,6 +210,7 @@
   background: #c2a3e9;
   border-radius: 12px;
   margin-right: 40px;
+  padding: 6px 22px 6px 2px;
 }
 #loginicon {
   position: absolute;
@@ -213,6 +221,7 @@
 .upcoming_events {
   width: 100%;
   padding: 40px;
+  position: relative;
 }
 
 .upcoming_events h1 {
@@ -220,17 +229,41 @@
   text-transform: uppercase;
   color: white;
   margin-top: 40px;
+  font-family: "Kanit", sans-serif;
 }
 
 #crossline {
   position: absolute;
-  width: 500px;
-  height: 6px;
+  width: 70%;
+  height: 3px;
   background: white;
   margin-top: 20px;
   bottom: -20px;
   left: 50%;
   transform: translateX(-50%);
+}
+
+#crossline::after {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+  background: white;
+  transform: rotate(45deg);
+  top: -4px;
+  position: absolute;
+  left: -2px;
+}
+#crossline::before {
+  content: "";
+
+  width: 10px;
+  height: 10px;
+  background: white;
+  transform: rotate(45deg);
+  top: -4px;
+  position: absolute;
+  right: -2px;
 }
 
 #scroll_icon {
@@ -241,6 +274,119 @@
   height: 50px;
   color: white;
   animation: move2 infinite linear 1s;
+}
+
+.upcoming_events section {
+  margin-top: 30px;
+  display: grid;
+  place-items: center;
+  grid-row-gap: 20px;
+
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+}
+.jobs section {
+  margin-top: 30px;
+  display: grid;
+  place-items: center;
+  grid-row-gap: 20px;
+  padding-bottom: 60px;
+  font-family: "Kanit", sans-serif;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+}
+.jobs h1 {
+  font-family: "Kanit", sans-serif;
+}
+.upcoming_events section div {
+  width: 250px;
+  height: 350px;
+  background-color: rgb(251, 251, 251);
+  position: relative;
+
+  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.6);
+  cursor: pointer;
+  transition: 2s;
+  overflow: hidden;
+}
+.jobs section div {
+  width: 200px;
+  height: 200px;
+  background-color: rgb(251, 251, 251);
+  position: relative;
+  border-radius: 12px;
+  box-shadow: 0px 4px 7px rgba(120, 55, 99, 0.6);
+  cursor: pointer;
+  transition: 2s;
+  overflow: hidden;
+  text-align: center;
+}
+
+.upcoming_events section div img {
+  width: 100%;
+  height: 50%;
+  padding: 10px;
+}
+.jobs section div img {
+  width: 50%;
+  height: 50%;
+  padding: 10px;
+}
+.upcoming_events section div p {
+  position: absolute;
+  text-align: left;
+  height: 50%;
+  padding: 10px;
+}
+#jobs div div h1 {
+  padding: 4px;
+  width: 100%;
+  height: 100%;
+  color: #163d64;
+  font-family: "Lobster", cursive;
+}
+.jobs #jobline {
+  text-align: center;
+  text-transform: uppercase;
+  color: white;
+  margin-top: 40px;
+}
+footer {
+  width: 100%;
+  height: 30vh;
+  position: relative;
+}
+#details h1 {
+  font-family: "Permanent Marker", cursive;
+}
+footer div {
+  width: 100%;
+}
+footer div img {
+  position: absolute;
+  width: 100%;
+  height: 50vh;
+  bottom: 0;
+  z-index: -1;
+}
+#details {
+  color: #163d64;
+  position: absolute;
+  left: 15%;
+  top: 30%;
+  z-index: 11;
+}
+#contacts {
+  color: #000000;
+}
+
+#icons {
+  position: absolute;
+
+  bottom: 20px;
+  left: 60%;
+}
+#icons i {
+  font-size: 20px;
+  gap: 20px;
 }
 @keyframes move2 {
   0% {
@@ -292,36 +438,7 @@
     width: 200px;
     height: 200px;
   }
-}
-
-.upcoming_events section {
-  margin-top: 30px;
-  display: grid;
-  place-items: center;
-  grid-row-gap: 20px;
-
-  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-}
-.upcoming_events section div {
-  width: 250px;
-  height: 350px;
-  background-color: rgb(251, 251, 251);
-  position: relative;
-
-  box-shadow: 0px 4px 7px rgba(0, 0, 0, 0.6);
-  cursor: pointer;
-  transition: 2s;
-  overflow: hidden;
-}
-
-.upcoming_events section div img {
-  width: 100%;
-  height: 50%;
-  padding: 10px;
-}
-.upcoming_events section div p {
-  position: absolute;
-  text-align: left;
-  height: 50%;
-  padding: 10px;
+  #icons {
+    left: 40%;
+  }
 }
